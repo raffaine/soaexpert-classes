@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:anexo xmlns:tns="http://www.example.org/DeMacho" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/DeMacho DeMacho.xsd ">
+  <tns:id>0</tns:id>
+  <tns:nome>tns:nome</tns:nome>
+  <tns:comentario>tns:comentario</tns:comentario>
+  <tns:url>http://tempuri.org</tns:url>
+  <tns:imagem>MA==</tns:imagem>
+</tns:anexo>

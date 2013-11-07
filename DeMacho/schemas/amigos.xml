@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:amigos xmlns:tns="http://www.example.org/DeMacho" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/DeMacho DeMacho.xsd ">
+  <tns:usuario>
+    <tns:id>0</tns:id>
+    <tns:nome>tns:nome</tns:nome>
+    <tns:nomeCompleto>tns:nomeCompleto</tns:nomeCompleto>
+    <tns:email>tns:email</tns:email>
+    <tns:dataNascimento>2001-01-01</tns:dataNascimento>
+    <tns:sexo>FEMININO</tns:sexo>
+    <tns:statusConta>ATIVO</tns:statusConta>
+    <tns:status>ONLINE</tns:status>
+    <tns:foto>MA==</tns:foto>
+  </tns:usuario>
+  <tns:amigo>
+	<tns:id>2</tns:id>
+    <tns:nome>amigo</tns:nome>
+    <tns:nomeCompleto>amigo completo</tns:nomeCompleto>
+    <tns:email>amigo@gmail.com</tns:email>
+    <tns:dataNascimento>2001-01-01</tns:dataNascimento>
+    <tns:sexo>FEMININO</tns:sexo>
+    <tns:statusConta>ATIVO</tns:statusConta>
+    <tns:status>ONLINE</tns:status>
+    <tns:foto>MA==</tns:foto>  	
+  </tns:amigo>
+</tns:amigos>
