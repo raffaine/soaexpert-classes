@@ -8,6 +8,7 @@
 #eclipse files
 build/
 WebContent/
+.settings/
 
 #gedit temp files
 *~
