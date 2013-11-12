@@ -4,22 +4,22 @@
     <xsd:schema
     	targetNamespace="http://demacho.com.br/services/ContaService/v1" xmlns:pref="http://www.example.org/DeMacho">
     	<xsd:import schemaLocation="../schemas/DeMacho.xsd" namespace="http://www.example.org/DeMacho"></xsd:import>
+		<xsd:element name="usuarioCriar" type="pref:Usuario" />
 		<xsd:element name="usuario" type="pref:Usuario" />
+		<xsd:element name="usuarioCriarResponse" type="pref:Usuario" />
 		<xsd:element name="usuarioResponse" type="pref:Usuario" />
 		<xsd:element name="retornoResponse" type="pref:MensagemRetorno"/>
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="criarRequest">
-    <wsdl:part name="usuario" element="tns:usuario"/>
+    <wsdl:part name="usuario" element="tns:usuarioCriar"/>
   </wsdl:message>
   <wsdl:message name="criarResponse">
-    <wsdl:part name="usuario" element="tns:usuarioResponse"/>
+    <wsdl:part name="usuario" element="tns:usuarioCriarResponse"/>
   </wsdl:message>
   
   <wsdl:message name="ativarRequest">
   	<wsdl:part name="usuario" element="tns:usuario"/>  </wsdl:message>
-  <wsdl:message name="ativarResponse">
-  </wsdl:message>
 
   <wsdl:message name="removerRequest">
   	<wsdl:part name="usuario" element="tns:usuario"></wsdl:part>
@@ -35,7 +35,6 @@
     </wsdl:operation>
     <wsdl:operation name="ativar">
     	<wsdl:input message="tns:ativarRequest"></wsdl:input>
-    	<wsdl:output message="tns:ativarResponse"></wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="remover">
     	<wsdl:input message="tns:removerRequest"></wsdl:input>
@@ -61,9 +60,6 @@
   		<wsdl:input>
   			<soap:body use="literal" />
   		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="literal" />
-  		</wsdl:output>
   	</wsdl:operation>
   	<wsdl:operation name="remover">
   		<soap:operation

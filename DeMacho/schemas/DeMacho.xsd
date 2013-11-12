@@ -11,7 +11,7 @@
 			<element name="sexo" type="tns:Sexo"/>
 			<element name="statusConta" type="tns:StatusConta"/>
 			<element name="status" type="tns:Status"/>
-			<element name="foto" type="base64Binary"/>
+			<element name="foto" type="base64Binary" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	

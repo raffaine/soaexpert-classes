@@ -24,7 +24,7 @@ public class ContaService_ContaServiceSOAPImpl implements ContaService {
 	 */
 	public Usuario criar(Usuario usuario) {
 		// replace with your impl here
-		return null;
+		return usuario;
 	}
 
 	/**
