@@ -3,6 +3,7 @@ package br.com.demacho.services.contaservice.v1;
 import javax.jws.WebService;
 import javax.xml.ws.BindingType;
 import org.example.demacho.MensagemRetorno;
+import org.example.demacho.TipoMensagem;
 import org.example.demacho.Usuario;
 
 /**
@@ -32,7 +33,7 @@ public class ContaService_ContaServiceSOAPImpl implements ContaService {
 	 * @param usuario
 	 */
 	public void ativar(Usuario usuario) {
-		// replace with your impl here
+		System.out.println("ATIVAR - PASSOU POR AQUI");
 		return;
 	}
 
@@ -42,8 +43,10 @@ public class ContaService_ContaServiceSOAPImpl implements ContaService {
 	 * @return returns org.example.demacho.MensagemRetorno
 	 */
 	public MensagemRetorno remover(Usuario usuario) {
-		// replace with your impl here
-		return null;
+		MensagemRetorno retorno = new MensagemRetorno();
+		retorno.setMensagem("TESTE DE REMOCAO");
+		retorno.setTipoMensagem(TipoMensagem.SUCESSO);
+		return retorno;
 	}
 
 }
