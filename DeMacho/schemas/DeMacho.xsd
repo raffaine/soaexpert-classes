@@ -53,6 +53,13 @@
 			<element name="postagem" type="tns:Postagem" minOccurs="0" maxOccurs="unbounded"/>
 		</sequence>
 	</complexType>
+	
+	<complexType name="MensagemRetorno">
+		<sequence>
+			<element name="tipoMensagem" type="tns:TipoMensagem"/>
+			<element name="mensagem" type="string"/>
+		</sequence>
+	</complexType>
 	<!--ENTIDADES - FIM-->
 	
 	<!--VALUE OBJECTS - INICIO-->
@@ -77,6 +84,13 @@
 			<enumeration value="OFFLINE"/>
 			<enumeration value="AUSENTE"/>
 			<enumeration value="OCUPADO"/>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="TipoMensagem">
+		<restriction base="string">
+			<enumeration value="SUCESSO"/>
+			<enumeration value="FALHA"/>
 		</restriction>
 	</simpleType>
 	<!--VALUE OBJECTS - FIM-->

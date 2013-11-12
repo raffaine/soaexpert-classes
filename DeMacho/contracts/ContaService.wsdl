@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://demacho.com.br/services/ContaService/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ContaService" targetNamespace="http://demacho.com.br/services/ContaService/v1" xmlns:xsd1="http://www.example.org/DeMacho">
+  <wsdl:types>
+    <xsd:schema
+    	targetNamespace="http://demacho.com.br/services/ContaService/v1" xmlns:pref="http://www.example.org/DeMacho">
+    	<xsd:import schemaLocation="../schemas/DeMacho.xsd" namespace="http://www.example.org/DeMacho"></xsd:import>
+		<xsd:element name="usuario" type="pref:Usuario" />
+		<xsd:element name="usuarioResponse" type="pref:Usuario" />
+		<xsd:element name="retornoResponse" type="pref:MensagemRetorno"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="criarRequest">
+    <wsdl:part name="usuario" element="tns:usuario"/>
+  </wsdl:message>
+  <wsdl:message name="criarResponse">
+    <wsdl:part name="usuario" element="tns:usuarioResponse"/>
+  </wsdl:message>
+  
+  <wsdl:message name="ativarRequest">
+  	<wsdl:part name="usuario" element="tns:usuario"/>  </wsdl:message>
+  <wsdl:message name="ativarResponse">
+  </wsdl:message>
+
+  <wsdl:message name="removerRequest">
+  	<wsdl:part name="usuario" element="tns:usuario"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removerResponse">
+	<wsdl:part name="retorno" element="tns:retornoResponse"></wsdl:part>
+  </wsdl:message>
+  
+  <wsdl:portType name="ContaService">
+    <wsdl:operation name="criar">
+      <wsdl:input message="tns:criarRequest"/>
+      <wsdl:output message="tns:criarResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ativar">
+    	<wsdl:input message="tns:ativarRequest"></wsdl:input>
+    	<wsdl:output message="tns:ativarResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="remover">
+    	<wsdl:input message="tns:removerRequest"></wsdl:input>
+    	<wsdl:output message="tns:removerResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ContaServiceSOAP" type="tns:ContaService">
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="criar">
+  		<soap:operation
+  			soapAction="http://demacho.com.br/services/ContaService/v1/criar" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="ativar">
+  		<soap:operation
+  			soapAction="http://demacho.com.br/services/ContaService/v1/ativar" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="remover">
+  		<soap:operation
+  			soapAction="http://demacho.com.br/services/ContaService/v1/remover" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContaService">
+    <wsdl:port binding="tns:ContaServiceSOAP" name="ContaServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

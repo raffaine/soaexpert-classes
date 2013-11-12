@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://demacho.com.br/services/PerfilService/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PerfilService" targetNamespace="http://demacho.com.br/services/PerfilService/v1">
+  <wsdl:types>
+    <xsd:schema
+    	targetNamespace="http://demacho.com.br/services/PerfilService/v1" xmlns:pref="http://www.example.org/DeMacho">
+    	<xsd:import schemaLocation="../schemas/DeMacho.xsd" namespace="http://www.example.org/DeMacho"></xsd:import>
+    	<xsd:element name="ver">
+    		<xsd:complexType>
+    			<xsd:sequence>
+    				<xsd:element name="in" type="pref:Usuario" />
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="verResponse">
+    		<xsd:complexType>
+    			<xsd:sequence>
+    				<xsd:element name="out" type="xsd:string" />
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="verRequest">
+    <wsdl:part element="tns:ver" name="usuario"/>
+  </wsdl:message>
+  <wsdl:message name="verResponse">
+    <wsdl:part element="tns:verResponse" name="perfil"/>
+  </wsdl:message>
+  <wsdl:portType name="PerfilService">
+    <wsdl:operation name="ver">
+      <wsdl:input message="tns:verRequest"/>
+      <wsdl:output message="tns:verResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PerfilServiceSOAP" type="tns:PerfilService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ver">
+      <soap:operation soapAction="http://demacho.com.br/services/PerfilService/v1/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PerfilService">
+    <wsdl:port binding="tns:PerfilServiceSOAP" name="PerfilServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
