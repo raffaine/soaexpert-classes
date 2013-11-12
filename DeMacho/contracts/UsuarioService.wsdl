@@ -19,7 +19,7 @@
   </wsdl:types>
   
   <wsdl:message name="buscarRequest">
-    <wsdl:part name="usuario" element="tns:usuario"/>
+    <wsdl:part name="usuario" element="tns:filtro"/>
   </wsdl:message>
   <wsdl:message name="buscarResponse">
     <wsdl:part name="usuario" element="tns:usuarioResponse"/>
