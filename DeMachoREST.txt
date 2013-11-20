@@ -1,0 +1,39 @@
+1. Criação de Conta
+POST /conta
+Parametros: Informações de conta
+Retorno: Chave de ativação da conta
+
+2. Ativação de Conta
+PUT /conta/ativar
+Parametros: Chave de ativação da conta
+
+3. Remoção de Conta
+DELETE /conta
+
+
+4. Buscar Usuario
+GET /usuarios/
+
+5. Visualizar Perfil de usuario
+GET /usuarios/{id}/perfil
+
+6. Edição de Perfil de usuario
+PUT /conta/atualiza_perfil
+
+7. Adicionar um amigo
+POST /conta/amigos/{id-amigo} 
+
+8. [NOVO] Visualizar amigos de um usuário
+GET /usuarios/{id}/amigos
+
+9. Remover um amigo
+DELETE /conta/amigos/{id-amigo}
+
+10. [NOVO] Listar os meus amigos
+GET /conta/amigos
+
+11. Postagem de Mensagens
+POST /conta/mensagens
+
+12. Curtir uma mensagem [ISSO NÃO FUNCIONA!!]
+
